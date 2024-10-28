@@ -8,19 +8,19 @@ namespace _Scripts.UI.CalculatorScreen
     public class CalculatorPresenter : ICalculatorPresenter, ICalculator
     {
         private readonly CalculatorModel _model;
-        private readonly ICalculatorService _calculatorService;
+        private readonly ICalculateService calculateService;
         private readonly Action<Action> _showErrorScreen;
 
-        public CalculatorPresenter(CalculatorModel model, ICalculatorService calculatorService, Action<Action> showErrorScreen)
+        public CalculatorPresenter(CalculatorModel model, ICalculateService calculateService, Action<Action> showErrorScreen)
         {
             _model = model;
-            _calculatorService = calculatorService;
+            this.calculateService = calculateService;
             _showErrorScreen = showErrorScreen;
         }
         
         public void Calculate(string equation, Action<bool> callback)
         {
-            var addCalculate = _calculatorService.AddCalculate(equation);
+            var addCalculate = calculateService.AddCalculate(equation);
             
             _model.AddEquation(addCalculate.Item1);
             

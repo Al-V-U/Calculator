@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace _Scripts.Services.Calculator
 {
-    public class CalculatorService : ICalculatorService
+    public class CalculateService : ICalculateService
     {
         private const string Error = " = ERROR";
 
@@ -31,6 +31,9 @@ namespace _Scripts.Services.Calculator
         
         private static bool IsOnlyDigits(string member)
         {
+            if (string.IsNullOrWhiteSpace(member))
+                return false;
+            
             foreach (char c in member)
             {
                 if (!char.IsDigit(c))

@@ -28,7 +28,7 @@ namespace _Scripts
             StorageService storageService = new StorageService();
             AllServices.Container.Register<ISaveStorageService>(storageService);
             AllServices.Container.Register<ILoadStorageService>(storageService);
-            AllServices.Container.Register<ICalculatorService>(new CalculatorService());
+            AllServices.Container.Register<ICalculateService>(new CalculateService());
         }
 
         private void LoadHistory(ICalculator calculator)
@@ -46,7 +46,7 @@ namespace _Scripts
             
             CalculatorModel model = new CalculatorModel(view, AllServices.Container.Get<ISaveStorageService>(), GameConst.HistoryFileName);
             
-            CalculatorPresenter presenter = new CalculatorPresenter(model, AllServices.Container.Get<ICalculatorService>(), ShowErrorScreen);
+            CalculatorPresenter presenter = new CalculatorPresenter(model, AllServices.Container.Get<ICalculateService>(), ShowErrorScreen);
             
             view.Construct(presenter);
             
