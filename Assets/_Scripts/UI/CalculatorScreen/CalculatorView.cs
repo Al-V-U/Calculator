@@ -69,13 +69,16 @@ namespace _Scripts.UI.CalculatorScreen
 
         private void OnCalculateClick()
         {
-            _presenter.Calculate(inputField.text, success =>
+            if (!string.IsNullOrWhiteSpace(inputField.text))
             {
-                if (success)
-                    SetInputFieldText("");
-                else
-                    SetActive(false);
-            });
+                _presenter.Calculate(inputField.text, success =>
+                {
+                    if (success)
+                        SetInputFieldText("");
+                    else
+                        SetActive(false);
+                });
+            }
             inputField.ActivateInputField();
         }
 
