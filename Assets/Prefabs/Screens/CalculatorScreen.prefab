@@ -311,7 +311,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3684677764959998869
 CanvasRenderer:
@@ -368,8 +368,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 20
     m_Bottom: 20
   m_ChildAlignment: 4
   m_Spacing: 20
@@ -1054,11 +1054,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scroll: {fileID: 2940911097337681470}
   historyParent: {fileID: 5906516129046120101}
-  maxResultElements: 3
+  maxResultElements: 7
   elementSpacing: 5
   results: {fileID: 8494471932512239821}
   pool: {fileID: 8876087959765120152}
-  elementsToAddCount: 4
+  elementsToAddCount: 10
 --- !u!114 &8876087959765120152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementPrefab: {fileID: 7376496162185919338, guid: c39d04977877842b0bede5d84ed67da4, type: 3}
-  initialPoolSize: 9
+  initialPoolSize: 21
   poolElements: {fileID: 6865219087660421188}
 --- !u!114 &2940911097337681470
 MonoBehaviour:

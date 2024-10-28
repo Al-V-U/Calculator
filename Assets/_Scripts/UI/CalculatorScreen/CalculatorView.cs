@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace _Scripts.UI.CalculatorScreen
 {
-    public class CalculatorView : MonoBehaviour
+    public class CalculatorView : MonoBehaviour, ICalculatorView
     {
         [SerializeField] private Button calculateButton;
         
@@ -19,11 +19,11 @@ namespace _Scripts.UI.CalculatorScreen
         
         [SerializeField] private Color separatorActiveColor;
         
-        private CalculatorPresenter _presenter;
+        private ICalculatorPresenter _presenter;
 
         private bool _isActive = true;
         
-        public void Construct(CalculatorPresenter presenter)
+        public void Construct(ICalculatorPresenter presenter)
         {
             _presenter = presenter;
         }

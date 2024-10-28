@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Scripts.UI.CalculatorScreen
 {
-    public class CalculatorPresenter
+    public class CalculatorPresenter : ICalculatorPresenter, ICalculator
     {
         private readonly CalculatorModel _model;
         private readonly ICalculatorService _calculatorService;

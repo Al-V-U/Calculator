@@ -19,8 +19,8 @@ namespace _Scripts
         private void Awake()
         {
             RegisterServices();
-            CalculatorPresenter calculatorPresenter = CreateCalculatorScreen();
-            LoadHistory(calculatorPresenter);
+            ICalculator calculator = CreateCalculatorScreen();
+            LoadHistory(calculator);
         }
 
         private void RegisterServices()
@@ -31,16 +31,16 @@ namespace _Scripts
             AllServices.Container.Register<ICalculatorService>(new CalculatorService());
         }
 
-        private void LoadHistory(CalculatorPresenter calculatorPresenter)
+        private void LoadHistory(ICalculator calculator)
         {
             ILoadStorageService loadStorageService = AllServices.Container.Get<ILoadStorageService>();
             string inputFieldText = loadStorageService.LoadPrefs(GameConst.InputFieldText, ""); 
-            calculatorPresenter.SetInputFieldText(inputFieldText);
+            calculator.SetInputFieldText(inputFieldText);
             
-            loadStorageService.LoadLines(GameConst.HistoryFileName, calculatorPresenter.HistoryLoaded);
+            loadStorageService.LoadLines(GameConst.HistoryFileName, calculator.HistoryLoaded);
         }
 
-        private CalculatorPresenter CreateCalculatorScreen()
+        private ICalculator CreateCalculatorScreen()
         {
             CalculatorView view = Instantiate(calculatorScreenPrefab, screenParent);
             

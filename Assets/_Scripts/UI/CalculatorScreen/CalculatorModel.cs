@@ -6,7 +6,7 @@ namespace _Scripts.UI.CalculatorScreen
 {
     public class CalculatorModel
     {
-        private readonly CalculatorView _view;
+        private readonly ICalculatorView _view;
         
         private List<string> _history = new();
         
@@ -14,7 +14,7 @@ namespace _Scripts.UI.CalculatorScreen
         
         private readonly string _saveFileName;
 
-        public CalculatorModel(CalculatorView view, ISaveStorageService saveStorageService, string saveFileName)
+        public CalculatorModel(ICalculatorView view, ISaveStorageService saveStorageService, string saveFileName)
         {
             _view = view;
             _saveStorageService = saveStorageService;
